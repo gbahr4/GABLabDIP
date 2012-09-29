@@ -40,7 +40,8 @@ Use the OOA/D goals that you memorized:
       connected by association lines, labeled to describe the association.
       You should have one box for each of six key conceptual objects.
 
-    * Object-oriented Design: Skillfully Assigning Responsibilities to Objects:
+    * Object-oriented Design: Skillfully Assigning Responsibilities to 
+        Objects:
 
       Now that you have a good idea of the objects you will need and how
       they will collaborate (communicate) with each other, apply the DIP and
@@ -78,7 +79,8 @@ In addition to the code for managing your providers and renderers, you will
 need a Startup class with a main method to start the program and do some
 basic initialization. But remember, input comes from the provider components
 and output goes to the renderer components. And your Startup class must ONLY
-talk to the high-level class -- never to the low-level classes. That means your 
+talk to the high-level class -- never to the low-level classes. That means 
+your 
 program should have at least 6 classes: one startup, one high-level service
 class, two providers (input classes) and two renderers (output classes). And
 the way you provide input and output should vary.
@@ -103,7 +105,8 @@ JOptionPane.showMessageDialog(null,"My Message");
 ... then to do input, if necessary, do this:
 
 String response =
-       JOptionPane.showInputDialog(null, "A Prompt, like enter message here:");
+       JOptionPane.showInputDialog(null, "A Prompt, like enter message 
+        here:");
 
 For more information, see the online JavaDoc for the JOptionPane class in
 Java SE 6.
