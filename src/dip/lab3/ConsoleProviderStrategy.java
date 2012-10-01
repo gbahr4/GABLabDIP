@@ -12,6 +12,7 @@ public class ConsoleProviderStrategy implements MessageProviderStrategy {
     
     public String readInput() {
         Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter text: ");
         String line = keyboard.nextLine();
         return line;
     }

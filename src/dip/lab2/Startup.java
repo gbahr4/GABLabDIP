@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  *    interchangeable? The DIP requires this.
  * 
  * @author Greg Bahr
- * @version 1.0
+ * @version 2.0
  */
 public class Startup {
     public static enum ServiceQuality {
