@@ -4,7 +4,7 @@ package dip.lab3;
 /**
  *
  * @author Greg Bahr
- * @version 1.0
+ * @version 2.0
  */
 public class MessageService {
     
@@ -17,7 +17,7 @@ public class MessageService {
         this.messageRenderer = messageRenderer;
     }
     
-    public void processMessage() {
+    public final void processMessage() {
         String line = messageProvider.readInput();
         messageRenderer.writeOutput(line);
     }

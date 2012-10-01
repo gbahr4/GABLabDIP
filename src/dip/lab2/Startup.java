@@ -17,24 +17,25 @@ import javax.swing.JOptionPane;
  *    interchangeable? The DIP requires this.
  * 
  * @author Greg Bahr
- * @version 2.0
+ * @version 3.0
  */
 public class Startup {
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    };
-    private static TipCalculatorStrategy tipCalculatorStrategy;
-   
+    
     public static void main(String[] args) {
         
-        TipCalculatorService tipCalculatorService =
-                new TipCalculatorService(tipCalculatorStrategy);
+       
         TipCalculatorStrategy service =
                 new BaggageServiceTipCalculatorStrategy(
                 BaggageServiceTipCalculatorStrategy.ServiceQuality.FAIR,5);
-        System.out.println(service.getTip());
-        
-        
+                
+        TipCalculatorStrategy service2 =
+                new FoodServiceTipCalculatorStrategy(
+                FoodServiceTipCalculatorStrategy.ServiceQuality.GOOD,100.00);
+                
+        TipCalculatorService tipCalculatorService =
+                new TipCalculatorService(service2);
+        double tip = service2.getTip();
+        System.out.println("The tip is: $" + tip);
     }
 
 }

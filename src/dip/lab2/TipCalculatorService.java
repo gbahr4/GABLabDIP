@@ -7,7 +7,7 @@ package dip.lab2;
 /**
  *
  * @author Greg Bahr
- * @version 2.0
+ * @version 3.0
  */
 public class TipCalculatorService {
     private TipCalculatorStrategy tipCalculatorStrategy; 
@@ -21,9 +21,8 @@ public class TipCalculatorService {
         this.tipCalculatorStrategy = tipCalculatorStrategy;
     }
     
-    
-    public double getTip() {
-        
+          
+    public final double getTip() {
         return tipCalculatorStrategy.getTip();
     }
 }

@@ -9,8 +9,10 @@ package dip.lab3;
 public class Startup {
     
     public static void main(String[] args) {
-//        MessageProviderStrategy messageProvider = new ConsoleProviderStrategy();
-//        MessageRendererStrategy messageRenderer = new ConsoleRendererStrategy();
+//        MessageProviderStrategy messageProvider = 
+//        new ConsoleProviderStrategy();
+//        MessageRendererStrategy messageRenderer = 
+//        new ConsoleRendererStrategy();
 //        
 //        MessageService messageService = 
 //                new MessageService(messageProvider, messageRenderer);
@@ -18,8 +20,10 @@ public class Startup {
 //        messageService.processMessage();
 //    }
     
-        MessageProviderStrategy messageProvider = new GUIProviderStrategy();
-        MessageRendererStrategy messageRenderer = new GUIRendererStrategy();
+        MessageProviderStrategy messageProvider = 
+                new GUIProviderStrategy();
+        MessageRendererStrategy messageRenderer = 
+                new GUIRendererStrategy();
         
         MessageService messageService = 
                 new MessageService(messageProvider, messageRenderer);

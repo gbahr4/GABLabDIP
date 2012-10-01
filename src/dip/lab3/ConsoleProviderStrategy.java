@@ -6,11 +6,11 @@ import java.util.Scanner;
 /**
  *
  * @author Greg Bahr
- * @version 1.0
+ * @version 2.0
  */
 public class ConsoleProviderStrategy implements MessageProviderStrategy {
     
-    public String readInput() {
+    public final String readInput() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter text: ");
         String line = keyboard.nextLine();

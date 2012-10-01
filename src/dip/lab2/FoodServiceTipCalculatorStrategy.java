@@ -7,7 +7,7 @@ package dip.lab2;
  * Any other best practice violations? Fix them too.
  *
  * @author Greg Bahr
- * @version 2.0
+ * @version 3.0
  */
 public class FoodServiceTipCalculatorStrategy implements TipCalculatorStrategy {
     private static final double MIN_BILL = 0.00;
@@ -18,17 +18,16 @@ public class FoodServiceTipCalculatorStrategy implements TipCalculatorStrategy {
     private static final double POOR_RATE = 0.10;
 
     private double bill;
-    public enum ServiceQuality {
-        GOOD, FAIR, POOR
-    }
-    private ServiceQuality serviceQuality;
+    
+    private TipCalculatorStrategy.ServiceQuality serviceQuality;
 
-    public FoodServiceTipCalculatorStrategy(ServiceQuality q, double billAmt) {
+    public FoodServiceTipCalculatorStrategy(TipCalculatorStrategy.
+            ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
         this.setBill(billAmt);
     }
 
-    public double getTip() {
+    public final double getTip() {
         double tip = 0.00; // always initialize local variables
 
         switch(serviceQuality) {
@@ -53,12 +52,12 @@ public class FoodServiceTipCalculatorStrategy implements TipCalculatorStrategy {
         bill = billAmt;
     }
 
-    public final void setServiceRating(ServiceQuality q) {
+    public final void setServiceRating(TipCalculatorStrategy.ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
-    public ServiceQuality getServiceQuality() {
+    public final ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
 

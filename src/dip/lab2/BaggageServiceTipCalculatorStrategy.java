@@ -7,7 +7,7 @@ package dip.lab2;
  * Any other best practice violations? Fix them too.
  *
  * @author Greg Bahr
- * @version 2.0
+ * @version 3.0
  */
 public class BaggageServiceTipCalculatorStrategy implements 
         TipCalculatorStrategy {
@@ -22,20 +22,18 @@ public class BaggageServiceTipCalculatorStrategy implements
 
     private double baseTipPerBag;
     private int bagCount;
-    
-    public enum ServiceQuality {
-        GOOD, FAIR, POOR
-    }
-    private ServiceQuality serviceQuality;
+        
+    private TipCalculatorStrategy.ServiceQuality serviceQuality;
 
-    public BaggageServiceTipCalculatorStrategy(ServiceQuality q, int bags) {
+    public BaggageServiceTipCalculatorStrategy(TipCalculatorStrategy.
+            ServiceQuality q, int bags) {
         this.setServiceRating(q); // perform validation
         this.setBagCount(bags);
 
         baseTipPerBag = 1.00; // set default value
     }
 
-    public double getTip() {
+    public final double getTip() {
         double tip = 0.00; // always initialize local variables
 
         switch(serviceQuality) {
@@ -53,16 +51,16 @@ public class BaggageServiceTipCalculatorStrategy implements
         return tip;
     }
 
-    public final void setServiceRating(ServiceQuality q) {
+    public final void setServiceRating(TipCalculatorStrategy.ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
-    public ServiceQuality getServiceQuality() {
+    public final ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
 
-    public int getBagCount() {
+    public final int getBagCount() {
         return bagCount;
     }
 
@@ -74,11 +72,11 @@ public class BaggageServiceTipCalculatorStrategy implements
         this.bagCount = bagCount;
     }
 
-    public double getBaseTipPerBag() {
+    public final double getBaseTipPerBag() {
         return baseTipPerBag;
     }
 
-    public void setBaseTipPerBag(double baseTipPerBag) {
+    public final void setBaseTipPerBag(double baseTipPerBag) {
         if(baseTipPerBag < 0) {
             throw new IllegalArgumentException(
                     "error: base tip must be greater than or equal to zero");
